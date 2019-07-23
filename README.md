@@ -1,7 +1,7 @@
 # IP-Changer
 Administration tool for remote IP address change within domain.
 
-Program is developed for completing a huge task(still in progress) within my company where my department has to change hundreds of production PC-s IP configurations (IP, MASK, GATEWAY, DNS).
+Program is developed for completing a huge task(still in progress) within my company where my department has to change hundreds of production PC-s IP configurations (IP, MASK, GATEWAY, DNS) along with other networking tasks.
 
 HOW TO USE THE SOFTWARE?
 1. Copy all files to your PC
