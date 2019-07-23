@@ -1,5 +1,5 @@
 # IP-Changer
-Administration tool for remote IP address change within domain
+Administration tool for remote IP address change within domain.
 
 HOW TO USE THE SOFTWARE?
 1. Copy all files to your PC
@@ -10,3 +10,8 @@ HOW TO USE THE SOFTWARE?
 6. Select interface and set new IP address
 7. Upload new IP
 8. Upload DNS1 and DNS2 if neccessary (set manually in settings.ini file), required if setup static IP from DHCP address
+
+Requirements:
+WindowsXP and up (tested on Windows7 and Windows 10)
+
+Program uses PSTools suite for remote commands execution by Mark Russinovich https://docs.microsoft.com/en-us/sysinternals/downloads/pstools
