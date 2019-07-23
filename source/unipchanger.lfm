@@ -1,0 +1,603 @@
+object frmainform: Tfrmainform
+  Left = 492
+  Height = 565
+  Top = 230
+  Width = 798
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'IP Changer'
+  ClientHeight = 545
+  ClientWidth = 798
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.4.5.0'
+  object cbinterfaces: TComboBox
+    Left = 8
+    Height = 23
+    Top = 104
+    Width = 256
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ItemHeight = 15
+    OnChange = cbinterfacesChange
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object lbinterface: TLabel
+    Left = 8
+    Height = 15
+    Top = 88
+    Width = 72
+    Caption = 'Interfaces list:'
+    ParentColor = False
+  end
+  object edip: TEdit
+    Left = 8
+    Height = 24
+    Top = 24
+    Width = 168
+    Alignment = taCenter
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = edipChange
+    OnKeyPress = edipKeyPress
+    ParentFont = False
+    TabOrder = 1
+  end
+  object lbip: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 121
+    Caption = 'PC IP address or name:'
+    ParentColor = False
+  end
+  object btngetdata: TButton
+    Left = 184
+    Height = 25
+    Top = 23
+    Width = 112
+    Caption = 'GET Data'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = btngetdataClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object divold: TDividerBevel
+    Left = 8
+    Height = 15
+    Top = 63
+    Width = 392
+    Caption = 'Default Remote Interface'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object divnew: TDividerBevel
+    Left = 432
+    Height = 15
+    Top = 63
+    Width = 360
+    Caption = 'New Configuration'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DividerBevel3: TDividerBevel
+    Left = 408
+    Height = 425
+    Top = 80
+    Width = 15
+    Font.Style = [fsBold]
+    Orientation = trVertical
+    ParentFont = False
+  end
+  object lboldIP: TLabel
+    Left = 8
+    Height = 16
+    Top = 136
+    Width = 65
+    Caption = 'Interface IP:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Memo: TMemo
+    Left = 8
+    Height = 344
+    Top = 160
+    Width = 384
+    PopupMenu = PopupMemo
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 3
+    WordWrap = False
+  end
+  object btnpingoldip: TButton
+    Left = 5
+    Height = 25
+    Top = 513
+    Width = 99
+    Caption = 'Ping Old IP'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = btnpingoldipClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object btnpingnewip: TButton
+    Left = 429
+    Height = 25
+    Top = 513
+    Width = 99
+    Caption = 'Ping New IP'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = btnpingnewipClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object ednewIP: TEdit
+    Left = 528
+    Height = 23
+    Top = 96
+    Width = 180
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = ednewIPChange
+    ParentFont = False
+    TabOrder = 6
+    Text = 'ednewIP'
+  end
+  object Label1: TLabel
+    Left = 432
+    Height = 15
+    Top = 100
+    Width = 58
+    Caption = 'IP Address:'
+    ParentColor = False
+  end
+  object ednewMask: TEdit
+    Left = 529
+    Height = 23
+    Top = 136
+    Width = 179
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = ednewMaskChange
+    ParentFont = False
+    TabOrder = 7
+    Text = 'ednewMask'
+  end
+  object Label2: TLabel
+    Left = 432
+    Height = 15
+    Top = 144
+    Width = 71
+    Caption = 'Subnet Mask:'
+    ParentColor = False
+  end
+  object edNewGateway: TEdit
+    Left = 529
+    Height = 23
+    Top = 184
+    Width = 180
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = edNewGatewayChange
+    ParentFont = False
+    TabOrder = 8
+    Text = 'edNewGateway'
+  end
+  object Label3: TLabel
+    Left = 432
+    Height = 15
+    Top = 192
+    Width = 89
+    Caption = 'Default Gateway:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 432
+    Height = 15
+    Top = 272
+    Width = 32
+    Caption = 'DNS1:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 432
+    Height = 15
+    Top = 304
+    Width = 32
+    Caption = 'DNS2:'
+    ParentColor = False
+  end
+  object lbdns1: TLabel
+    Left = 529
+    Height = 15
+    Top = 272
+    Width = 48
+    Caption = '192.168.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbdns2: TLabel
+    Left = 529
+    Height = 15
+    Top = 304
+    Width = 48
+    Caption = '192.168.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnlogin: TButton
+    Left = 688
+    Height = 25
+    Top = 25
+    Width = 104
+    Caption = 'Login'
+    OnClick = btnloginClick
+    TabOrder = 9
+  end
+  object eduser: TEdit
+    Left = 416
+    Height = 23
+    Top = 25
+    Width = 130
+    Alignment = taCenter
+    TabOrder = 10
+  end
+  object edpassword: TEdit
+    Left = 552
+    Height = 23
+    Top = 25
+    Width = 128
+    Alignment = taCenter
+    EchoMode = emPassword
+    OnKeyPress = edpasswordKeyPress
+    PasswordChar = '*'
+    TabOrder = 11
+  end
+  object btnipconfig: TButton
+    Left = 528
+    Height = 25
+    Top = 224
+    Width = 180
+    Caption = 'UPLOAD IP CONFIG'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = btnipconfigClick
+    ParentFont = False
+    TabOrder = 12
+  end
+  object btnping: TButton
+    Left = 312
+    Height = 25
+    Top = 23
+    Width = 68
+    Caption = 'Ping'
+    OnClick = btnpingClick
+    TabOrder = 13
+  end
+  object btndns: TButton
+    Left = 528
+    Height = 25
+    Top = 328
+    Width = 180
+    Caption = 'UPLOAD DNS'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = btndnsClick
+    ParentFont = False
+    TabOrder = 14
+  end
+  object imgvncold: TImage
+    Cursor = crHandPoint
+    Left = 109
+    Height = 24
+    Hint = 'Connect with OLD IP address'
+    Top = 514
+    Width = 24
+    AutoSize = True
+    OnClick = imgvncoldClick
+    ParentShowHint = False
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869634403000089504E47
+      0D0A1A0A0000000D49484452000000180000001808020000006F15AAAF000000
+      09704859730000004F0000004F01638AFDD7000002F649444154789CAD95CB4F
+      534114C6BF33336DEFB5AD5CDA826D0A36A1C845A2821220E26383AE8CC628BA
+      74E3CA85890B779A18A3AEFC03D8B8301A5DB9D1B8D28D89511116501F110C6A
+      404169783555407A67C645AFB6D63606F4EC66CEE437E7FBCE3CA86A6BCFB613
+      9737DAAD8C73AC3E949413A3A91737CED39EABCFCEF57676C518A7357020359E
+      7F5657EE0C887ABBB533CA2CDF5A28F9E88AB1FAE656C638E76CED14009CC019
+      17BFC643D33AE045A345F487C6E1B4160CCD21CA298CCCE985659DA8A2C47A2A
+      76A3007A3C29B32B38BD43ACF79682FA52CECE184B5AFC727F2E9556CB126183
+      8ED9FC6092FB7E76A8A06AFB063694565FBEE912CA64568F6754D2A2BE61E7FD
+      82BED0EDB97BD87730C9AFBF7206A6D4AF6505505D80BC1C1F32A5A0A7532A62
+      D2063F0DA5D5A124EF8832BF07071A784B980D4E9703454C4A5AD45FB4097E76
+      D70E31BF072B12B180EB8A21601994F9AECB80825EB4D5B0C1CF7245164063F3
+      7A6C41ED4FB8B616F781005D54FD6F9DB7438C31BC9E2DE447E7554E625BEDDF
+      0FAB281E242D8AFAD99349B9BD560058763032AB1BABD93A0166D2D90ED150E5
+      12BD1C479BB8541540A6C0DE387B302E175A60F930BDA85FCEA8634D1C80C1D1
+      11659FB2FAE1B8FAF2552B0D00C96A02A80C0840779CDD1E71DECEA9CE189BFA
+      AA1773680AB9F227B2FAD25327F35D47FDC408003C9C215EAE2200892A323D34
+      3AAF3B62184AEBBA20454C0050C0CDD7526A7D719727B2CE2DC31005EF4AAF19
+      27EC8DF3E1B49A59D28F26645B0D0B1904606651BF9A51479AF8E630D5981431
+      296252C0838A2000ED511ACFE8545A6773DA0EBB2A0C413E8EE96FBAF4BC9635
+      3B1F7501F20ADC7EE3840CB2ABDD9D825EECAE63F7C654C454AD35947F30FC1E
+      0A199541513FF56CE4F7DF39BD360F9BEE240127B788A59C73EB8D73ED855BD7
+      BE043FD32E2A820C81E336DF15A706EB37E14438D5260E6FC2DCB2CA93F2F655
+      04E5853487CAD82718EA83A80F96493125A5547FCEAF22A48654527C1C4D0D6C
+      FDD7C7FFE3488AFED777F40304B3152E6B8410A70000000049454E44AE426082
+    }
+    ShowHint = True
+  end
+  object imgvncnew: TImage
+    Cursor = crHandPoint
+    Left = 533
+    Height = 24
+    Hint = 'Connect with NEW IP address'
+    Top = 513
+    Width = 24
+    AutoSize = True
+    OnClick = imgvncnewClick
+    ParentShowHint = False
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869634403000089504E47
+      0D0A1A0A0000000D49484452000000180000001808020000006F15AAAF000000
+      09704859730000004F0000004F01638AFDD7000002F649444154789CAD95CB4F
+      534114C6BF33336DEFB5AD5CDA826D0A36A1C845A2821220E26383AE8CC628BA
+      74E3CA85890B779A18A3AEFC03D8B8301A5DB9D1B8D28D89511116501F110C6A
+      404169783555407A67C645AFB6D63606F4EC66CEE437E7FBCE3CA86A6BCFB613
+      9737DAAD8C73AC3E949413A3A91737CED39EABCFCEF57676C518A7357020359E
+      7F5657EE0C887ABBB533CA2CDF5A28F9E88AB1FAE656C638E76CED14009CC019
+      17BFC643D33AE045A345F487C6E1B4160CCD21CA298CCCE985659DA8A2C47A2A
+      76A3007A3C29B32B38BD43ACF79682FA52CECE184B5AFC727F2E9556CB126183
+      8ED9FC6092FB7E76A8A06AFB063694565FBEE912CA64568F6754D2A2BE61E7FD
+      82BED0EDB97BD87730C9AFBF7206A6D4AF6505505D80BC1C1F32A5A0A7532A62
+      D2063F0DA5D5A124EF8832BF07071A784B980D4E9703454C4A5AD45FB4097E76
+      D70E31BF072B12B180EB8A21601994F9AECB80825EB4D5B0C1CF7245164063F3
+      7A6C41ED4FB8B616F781005D54FD6F9DB7438C31BC9E2DE447E7554E625BEDDF
+      0FAB281E242D8AFAD99349B9BD560058763032AB1BABD93A0166D2D90ED150E5
+      12BD1C479BB8541540A6C0DE387B302E175A60F930BDA85FCEA8634D1C80C1D1
+      11659FB2FAE1B8FAF2552B0D00C96A02A80C0840779CDD1E71DECEA9CE189BFA
+      AA1773680AB9F227B2FAD25327F35D47FDC408003C9C215EAE2200892A323D34
+      3AAF3B62184AEBBA20454C0050C0CDD7526A7D719727B2CE2DC31005EF4AAF19
+      27EC8DF3E1B49A59D28F26645B0D0B1904606651BF9A51479AF8E630D5981431
+      296252C0838A2000ED511ACFE8545A6773DA0EBB2A0C413E8EE96FBAF4BC9635
+      3B1F7501F20ADC7EE3840CB2ABDD9D825EECAE63F7C654C454AD35947F30FC1E
+      0A199541513FF56CE4F7DF39BD360F9BEE240127B788A59C73EB8D73ED855BD7
+      BE043FD32E2A820C81E336DF15A706EB37E14438D5260E6FC2DCB2CA93F2F655
+      04E5853487CAD82718EA83A80F96493125A5547FCEAF22A48654527C1C4D0D6C
+      FDD7C7FFE3488AFED777F40304B3152E6B8410A70000000049454E44AE426082
+    }
+    ShowHint = True
+  end
+  object btnresetnewip: TButton
+    Left = 717
+    Height = 25
+    Top = 224
+    Width = 59
+    Caption = 'Reset'
+    OnClick = btnresetnewipClick
+    TabOrder = 15
+  end
+  object btnsave: TButton
+    Left = 637
+    Height = 25
+    Top = 512
+    Width = 75
+    Caption = 'Save'
+    OnClick = btnsaveClick
+    TabOrder = 16
+  end
+  object btnOpen: TButton
+    Left = 717
+    Height = 25
+    Top = 512
+    Width = 75
+    Caption = 'Open'
+    OnClick = btnOpenClick
+    TabOrder = 17
+  end
+  object cbauto: TCheckBox
+    Left = 717
+    Height = 19
+    Hint = 'Set gateway from new IP address'
+    Top = 188
+    Width = 46
+    Caption = 'Auto'
+    OnClick = cbautoClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 18
+  end
+  object lbversion: TLabel
+    Left = 752
+    Height = 15
+    Top = 3
+    Width = 9
+    Caption = 'v.'
+    Font.Color = clGray
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbusername: TLabel
+    Left = 416
+    Height = 15
+    Top = 10
+    Width = 56
+    Caption = 'Username:'
+    ParentColor = False
+  end
+  object lbpassword: TLabel
+    Left = 552
+    Height = 15
+    Top = 10
+    Width = 53
+    Caption = 'Password:'
+    ParentColor = False
+  end
+  object lbinfo: TLabel
+    Left = 488
+    Height = 14
+    Top = 384
+    Width = 245
+    Caption = 'If OLD IP was DHCP, do not forget to upload DNS!'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbgit: TLabel
+    Left = 144
+    Height = 14
+    Top = 524
+    Width = 131
+    Caption = 'https://github.com/lanmisoft'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    OnClick = lbgitClick
+    OnMouseEnter = lbgitMouseEnter
+    OnMouseLeave = lbgitMouseLeave
+  end
+  object MainMenu1: TMainMenu
+    left = 280
+    top = 80
+    object mnfile: TMenuItem
+      Caption = 'File'
+      object mndomain: TMenuItem
+        Caption = 'Domain'
+        OnClick = mndomainClick
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+      end
+      object mnclose: TMenuItem
+        Caption = 'Close'
+        OnClick = mncloseClick
+      end
+    end
+    object mncommandsremote: TMenuItem
+      Caption = 'Remote Commands'
+      object mnnetshactive: TMenuItem
+        Caption = 'Network cards status'
+        OnClick = mnnetshactiveClick
+      end
+      object mnfirewallstatus: TMenuItem
+        Caption = 'Check firewall Status'
+        OnClick = mnfirewallstatusClick
+      end
+      object mnpsinfo: TMenuItem
+        Caption = 'PC Info'
+        OnClick = btngetdataClick
+      end
+      object mnnetshmac: TMenuItem
+        Caption = 'Get MAC'
+        OnClick = mnnetshmacClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object mnnetsh: TMenuItem
+        Caption = 'Run netsh'
+        OnClick = mnnetshClick
+      end
+      object MenuItem2: TMenuItem
+        Caption = '-'
+      end
+      object mnservices: TMenuItem
+        Caption = 'Remote Services'
+        object mndot3svc: TMenuItem
+          Caption = 'WiredAutoConfig(dot3svc)'
+          OnClick = mndot3svcClick
+        end
+      end
+    end
+    object mnlocalcommands: TMenuItem
+      Caption = 'Local Commands'
+      object mnflush: TMenuItem
+        Caption = 'Flush DNS'
+        OnClick = mnflushClick
+      end
+    end
+  end
+  object PopupMemo: TPopupMenu
+    left = 352
+    top = 80
+    object mncopyselected: TMenuItem
+      Caption = 'Copy selected'
+      OnClick = mncopyselectedClick
+    end
+  end
+end
