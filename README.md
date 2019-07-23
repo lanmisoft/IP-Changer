@@ -1,6 +1,8 @@
 # IP-Changer
 Administration tool for remote IP address change within domain.
 
+Program is developed for completing a huge task(still in progress) within my company where my department has to change hundreds of production PC-s IP configurations (IP, MASK, GATEWAY, DNS).
+
 HOW TO USE THE SOFTWARE?
 1. Copy all files to your PC
 2. Set Username and Password(must be admin on remote PC)
