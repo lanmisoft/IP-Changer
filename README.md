@@ -5,13 +5,14 @@ Program is developed for completing a huge task(still in progress) within my com
 
 HOW TO USE THE SOFTWARE?
 1. Copy all files to your PC
-2. Set Username and Password(must be admin on remote PC)
-3. Set domain name: File->Domain
-4. Type remote PC name or IP address
-5. Get data for all remote PC interfaces
-6. Select interface and set new IP address
-7. Upload new IP
-8. Upload DNS1 and DNS2 if neccessary (set manually in settings.ini file), required if setup static IP from DHCP address
+2. Start ipchanger.exe
+3. Set Username and Password(must be admin on remote PC)
+4. Set domain name: File->Domain
+5. Type remote PC name or IP address
+6. Get data for all remote PC interfaces
+7. Select interface and set new IP address
+8. Upload new IP
+9. Upload DNS1 and DNS2 if neccessary (set manually in settings.ini file), required if setup static IP from DHCP address
 
 Requirements:
 WindowsXP and up (tested on Windows7 and Windows 10)
