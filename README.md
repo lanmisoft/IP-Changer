@@ -6,7 +6,7 @@ Program is developed for completing a huge task(still in progress) within my com
 HOW TO USE THE SOFTWARE?
 1. Copy all files to your PC
 2. Set Username and Password(must be admin on remote PC)
-3. Set domain name: File->Domain (could be also remote PC name)
+3. Set domain name: File->Domain
 4. Type remote PC name or IP address
 5. Get data for all remote PC interfaces
 6. Select interface and set new IP address
