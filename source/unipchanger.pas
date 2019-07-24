@@ -601,7 +601,7 @@ var
   IP:string;
 begin
     IP:=edip.Text;
-  if ip='' then ip:='10.90.0.1';
+  if ip='' then ip:='192.168.1.1';
     if GetIP(IP)='0.0.0.0' then begin
     MessageDlg('Resolving error','Ping request could not find host '+ip+'. Please check the name and try again.',mtWarning,[mbCancel],0);
         exit;
