@@ -488,7 +488,7 @@ CUSTOM_MESSAGE:=' | ECHO. Connecting to '+IpHost+' and starting netsh as '+User+
 
 
   //services
-         if (sender as TMenuItem).Name='mndot3svc' then  //treba servis da iscita MAC mrezne
+         if (sender as TMenuItem).Name='mndot3svc' then
  command:='/c '+psexecpath+ '\psservice \\'+IpHost+' -u '+Domain+'\'+User+' -p '+Password +' start dot3svc > '+OUTPUT_FILE+ERROR_OUT+CUSTOM_MESSAGE;
 
   end;
