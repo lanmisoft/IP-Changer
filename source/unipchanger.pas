@@ -191,9 +191,7 @@ FUNCTION resourceVersionInfo: STRING;
        TRY
          vr.SetCustomRawDataStream(Stream);
          fi:= vr.FixedInfo;
-        // RESULT := 'Version ' + IntToStr(fi.FileVersion[0]) + '.' + IntToStr(fi.FileVersion[1]) +
-             //   ' release ' + IntToStr(fi.FileVersion[2]) + ' build ' + IntToStr(fi.FileVersion[3]);
-        RESULT :=IntToStr(fi.FileVersion[0]) + '.' + IntToStr(fi.FileVersion[1])+ '.'
+         RESULT :=IntToStr(fi.FileVersion[0]) + '.' + IntToStr(fi.FileVersion[1])+ '.'
         + IntToStr(fi.FileVersion[2]) ;
          vr.SetCustomRawDataStream(nil)
        FINALLY
@@ -219,7 +217,7 @@ var
   R: PHostEnt;
   A: TInAddr;
 begin
-  Result := '0.0.0.0' ; // '0.0.0.0'
+  Result := '0.0.0.0' ;
   WSAStartup($101, WSAData);
   R := Winsock.GetHostByName(PAnsiChar(AnsiString(HostName)));
   if Assigned(R) then
