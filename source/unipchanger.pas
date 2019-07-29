@@ -168,11 +168,6 @@ implementation
 
 { Tfrmainform }
 FUNCTION resourceVersionInfo: STRING;
-
- (* Unlike most of AboutText (below), this takes significant activity at run-    *)
- (* time to extract version/release/build numbers from resource information      *)
- (* appended to the binary.                                                      *)
-
  VAR     Stream: TResourceStream;
          vr: TVersionResource;
          fi: TVersionFixedInfo;
@@ -180,11 +175,6 @@ FUNCTION resourceVersionInfo: STRING;
  BEGIN
    RESULT:= '';
    TRY
-
- (* This raises an exception if version info has not been incorporated into the  *)
- (* binary (Lazarus Project -> Project Options -> Version Info -> Version        *)
- (* numbering).                                                                  *)
-
      Stream:= TResourceStream.CreateFromID(HINSTANCE, 1, PChar(RT_VERSION));
      TRY
        vr:= TVersionResource.Create;
@@ -203,6 +193,7 @@ FUNCTION resourceVersionInfo: STRING;
    EXCEPT
    END
  END { resourceVersionInfo } ;
+ 
 procedure Split (const Delimiter: Char; Input: string; const Strings: TStrings);
 begin
    Assert(Assigned(Strings)) ;
@@ -211,6 +202,7 @@ begin
    Strings.Delimiter := Delimiter;
    Strings.DelimitedText := Input;
 end;
+
 function GetIP(const HostName: string): string;
 var
   WSAData: TWSAData;
